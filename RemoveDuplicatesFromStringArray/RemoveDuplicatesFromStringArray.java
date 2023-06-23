@@ -23,6 +23,20 @@ public class RemoveDuplicatesFromStringArray {
         return result;
     }
 
+    public static List<String> removeDuplicatesWithSet(List<String> arr){
+        List<String> result = new ArrayList<>();
+        Set<String> set = new HashSet<>();
+
+        for(int i=0; i<arr.size(); i++){
+            if(! set.contains(arr.get(i))){
+                set.add(arr.get(i));
+                result.add(arr.get(i));
+            }
+        }
+        return result;
+    }
+
+
 
 
 
@@ -33,8 +47,8 @@ public class RemoveDuplicatesFromStringArray {
         List<String> output1 = removeDuplicatesWithForLoop(input);
         System.out.println(output1);
 
-//        List<String> output2 = removeDuplicatesWithSet(input);
-//        System.out.println(output2);
+        List<String> output2 = removeDuplicatesWithSet(input);
+        System.out.println(output2);
 
     }
 
